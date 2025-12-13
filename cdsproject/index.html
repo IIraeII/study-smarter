@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Pacifico&family=Patrick+Hand&display=swap"
+        rel="stylesheet">
+    <title>Spaced Repetition: The Interactive Comic</title>
+
+    <link rel="stylesheet" href="style.css?v=2">
+</head>
+
+<body>
+    <!-- Toggle Button -->
+    <button id="themeToggle" class="dark-mode-toggle" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
+        🌙
+    </button>
+
+    <header class="section-container active-section" id="introduction" style="min-height: auto; padding-bottom: 20px;">
+
+        <h1 class="fade-in"> Passive Learning <span> Doesn't Stick </span> Active Recall Does </h1>
+        <p class="subtitle fade-in delay-1">How one simple change can 10x your learning speed.</p>
+
+        <p class="fade-in delay-2 author-tag">
+            by <strong>R.</strong> • 2025 • ⏱️ 8 min read
+        </p>
+
+        <div class="story-content fade-in delay-2"
+            style="text-align: left; margin: 20px auto; max-width: 600px; font-size: 1.05em; line-height: 1.8;">
+            <p>
+                If you’ve ever <strong>reread the same notes five times</strong> and still blanked on the exam, you’re
+                not alone.
+                <br>
+                Across higher education—especially in <strong>demanding science, health, and technical
+                    majors</strong>—students spend hours studying but still feel like nothing is sticking.
+            </p>
+            <p>
+                What most of us never learned is that <em>the way you study</em> matters more than <em>how long you
+                    study</em>.
+                Research has shown that the most effective learning strategies are the ones that students <strong>rarely
+                    use</strong>.
+            </p>
+            <p>
+                Popular methods like <strong>rereading, highlighting, and cramming</strong> aren’t effective for
+                long-term memory.
+                <br>
+                Based on research from cognitive psychology, here is the truth:
+            </p>
+
+            <div class="secret-container fade-in delay-2">
+                <div class="secret-box">
+                    <div class="secret-text-content">
+                        <h3 style="margin-top:0; color:#4f46e5;">💡 The Secret:</h3>
+                        <p>
+                            Retrieval practice and spaced repetition produce <strong>far more durable, transferable
+                                learning</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-container fade-in delay-3">
+                <h3 style="font-size:2em; margin-bottom:20px; color:#555; text-align:center;">
+                    ❓ Do any of these sound like you?
+                </h3>
+                <div class="checklist-items">
+                    <label class="custom-checkbox">
+                        <input type="checkbox" onchange="checkStatus()">
+                        <span class="checkmark"></span>
+                        I cram the night before exams 📚
+                    </label>
+
+                    <label class="custom-checkbox">
+                        <input type="checkbox" onchange="checkStatus()">
+                        <span class="checkmark"></span>
+                        I read the textbook but forget it instantly 🧠
+                    </label>
+
+                    <label class="custom-checkbox">
+                        <input type="checkbox" onchange="checkStatus()">
+                        <span class="checkmark"></span>
+                        I feel overwhelmed by how much there is to learn 📝
+                    </label>
+                </div>
+
+                <div style="text-align:center;">
+                    <button id="diagnosis-btn" class="diagnosis-btn hidden-btn" onclick="revealSolution()">
+                        See the Cure ➜
+                    </button>
+                </div>
+            </div>
+
+            <div id="solution-reveal" class="hidden-content">
+                <div class="highlight-box">
+                    <h3>The Answer: Spaced Repetition</h3>
+                    <p>It's not magic. It's the biology of how your brain actually works.</p>
+
+                    <div class="diagram-placeholder" style="border:none; background:transparent;">
+                        <img src="assets/forgetting_curve_diagram.jpeg" alt="Forgetting Curve Diagram"
+                            style="width:100%; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+            </div>
+    </header>
+    <section class="section-container" id="my-story" style="min-height: auto; padding-top: 20px; padding-bottom: 20px;">
+
+        <div class="story-content" style="max-width: 800px; margin: 0 auto;">
+            <div class="quote-box story-quote">
+                <p>
+                    <strong>I learned this first-hand.</strong> When I first tried spaced repetition, I felt that it was
+                    a <em>waste of time</em>! ⏳
+                    I thought that there was no way looking over cards is going to help me be a better student—it just
+                    did not feel productive!
+                    I was used to writing pages and pages of notes, so not needing any papers, pens, or highlighters
+                    felt so foreign to me. 📝
+                </p>
+                <p>
+                    After being convinced by my friends many times about using spaced repetition (specifically
+                    <strong>Anki</strong>), I came back to it with <strong>simpler cards</strong>, <strong>shorter
+                        sessions</strong>, and <strong>real retrieval-based questions</strong>.
+                </p>
+                <p>
+                    This is when <em>everything changed</em>. ✨ Concepts that used to slip out of my mind suddenly
+                    started sticking. 🧩
+                    I remembered small details weeks later without having to cram, and my confidence going into exams
+                    was noticeably higher.
+                    The difference wasn’t more effort—it was just <strong>better strategy</strong>.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <main class="section-container" id="retrieval-practice">
+        <p class="transition-text fade-in" style="margin-bottom: 20px; font-style: italic; color: #666;">
+            So if passive review is an illusion, what actually works?
+        </p>
+
+        <h2>🧠 <strong>Retrieval Practice</strong> Works Better</h2>
+
+        <div style="text-align: left; max-width: 700px; margin-bottom: 30px;">
+            <p>
+                Retrieval practice is simple: try to recall what you are learning from memory instead of rereading it.
+                Flashcards, practice quizzes, and explaining concepts to a friend all count as forms of active
+                retrieval.
+            </p>
+            <p>
+                The message is clear: <strong>re-reading feels productive, but retrieving creates learning.</strong>
+                When you force yourself to recall, you can actually gauge whether you know the information or not.
+            </p>
+        </div>
+
+        <div class="evidence-box">
+            <h3>🔬 Research Spotlight</h3>
+            <p>
+                <strong>Science <a href="#references"
+                        style="color:var(--accent-color); text-decoration:none;"></a>(Karpicke & Blunt,
+                    2011)</a>:</strong> Retrieval practice led to significantly deeper
+                learning than concept mapping.
+                Students who tested themselves outperformed those who just read, even when they spent the same amount of
+                time!
+            </p>
+            <hr style="border: 0; border-top: 1px solid #ddd; margin: 10px 0;">
+            <p>
+                <strong>Xu et al. (2024):</strong> Self-testing and active recall strategies were linked to higher GPA,
+                better exam performance, and stronger self-confidence across college students.
+            </p>
+        </div>
+
+        <div class="comparison-container">
+            <div class="concept-box passive">
+                <h3>🚫 Passive Review</h3>
+                <p>Rereading & Highlighting. Creates the "illusion of competence"—you recognize it, but can't use it.
+                </p>
+            </div>
+
+            <div class="concept-box active">
+                <h3>✅ Active Retrieval</h3>
+                <p>Testing yourself. It feels harder, but that struggle is what strengthens the memory.</p>
+            </div>
+        </div>
+
+        <p class="instruction-text">Test the difference right now. <strong>Click to flip!</strong> ⤵️</p>
+
+        <div class="flashcard-scene">
+            <div class="flashcard-object" onclick="this.classList.toggle('flipped')">
+                <div class="face front">
+                    <p>What is the "illusion of competence"?</p>
+                </div>
+                <div class="face back">
+                    <p>Thinking you know material just because you recognize it while reading.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <section class="section-container" id="force-multiplier">
+        <p class="transition-text fade-in" style="margin-bottom: 20px; font-style: italic; color: #666;">
+            Retrieving it once proves you know it <em>now</em>. But how do you keep knowing it?
+        </p>
+
+        <h2>🚀 <strong>Spaced Repetition</strong> Is a Force Multiplier</h2>
+
+        <div class="content-split">
+            <div class="text-side">
+                <p>
+                    Retrieving information once isn’t enough. The real gains happen when you <strong>space out your
+                        review sessions</strong> over several days and weeks, rather than cramming them in one sitting.
+                </p>
+                <p>
+                    Spacing works because it takes advantage of the <strong>Ebbinghaus Forgetting Curve</strong>.
+                    After you learn something, your brain begins to forget it almost immediately.
+                    Without reinforcement, retention drops sharply within hours.
+                </p>
+
+                <!-- NEW EBBINGHAUS BIO SECTION -->
+                <div class="bio-box"
+                    style="background: rgba(0,0,0,0.03); padding: 25px; border-radius: 12px; margin: 30px 0; border-left: 4px solid var(--accent-color);">
+                    <div
+                        style="display:flex; gap:20px; align-items:center; justify-content:center; margin-bottom:20px;">
+                        <!-- Local Image Asset -->
+                        <img src="assets/ebbinghaus.jpg" alt="Hermann Ebbinghaus"
+                            style="width:80px; height:80px; border-radius:50%; object-fit:cover; border:3px solid var(--bg-color); box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        <div style="text-align: left;">
+                            <h4 style="margin:0 0 5px 0; font-size:1.2em;">Hermann Ebbinghaus</h4>
+                            <span style="font-size:0.9em; color:#666; font-style:italic;">The Psychologist Who Memorized
+                                "Nonsense" (1885)</span>
+                        </div>
+                    </div>
+
+                    <p style="font-size:1em; margin-bottom:15px;">
+                        German psychologist Hermann Ebbinghaus wanted to understand <strong>pure memory</strong>.
+                        To remove variables like "meaning" or "association," he spent years memorizing thousands of
+                        <strong>nonsense syllables</strong> (like "WID", "ZOF", "KAF") and testing his recall.
+                    </p>
+
+                    <div
+                        style="background:var(--bg-color); padding:15px; border-radius:8px; margin-bottom:15px; border:1px solid rgba(0,0,0,0.1);">
+                        <strong style="display:block; margin-bottom:10px; color:var(--accent-color);">📉 The
+                            "Forgetting" Stats:</strong>
+                        <ul style="margin:0; padding-left:20px; font-size:0.95em; margin-bottom:15px;">
+                            <li>After <strong>20 minutes</strong>, he forgot ~40% of the list.</li>
+                            <li>After <strong>1 day</strong>, he forgot ~66%.</li>
+                            <li>After <strong>6 days</strong>, he retained less than 25%.</li>
+                        </ul>
+                        <!-- Curve Diagram -->
+                        <img src="assets/forgetting_curve.png" alt="Ebbinghaus Forgetting Curve Diagram"
+                            style="width:100%; height:auto; border-radius:6px; border:1px solid #eee;">
+                        <p style="font-size:0.8em; color:#666; text-align:center; margin-top:5px;">
+                            <em>Notice the steep drop? That's your brain deleting "useless" data.</em>
+                        </p>
+                    </div>
+
+                    <p style="font-size:1em;">
+                        <strong>Why does this happen?</strong> <br>
+                        Your brain is an efficiency machine. It views unused information as "spam" and clears the cache
+                        to save energy.
+                        If you don't retrieve it, your brain assumes it's not important for survival.
+                    </p>
+
+                    <p style="font-size:1em; margin-top:15px; border-top:1px dashed #ccc; padding-top:15px;">
+                        <strong>💡 The Silver Lining: "Savings"</strong><br>
+                        Ebbinghaus discovered that even when he "forgot" a list, relearning it took <em>significantly
+                            less time</em> than the first time.
+                        This <strong>"Savings Score"</strong> proves that the memory traces were never truly gone—just
+                        buried.
+                        <em>Spaced repetition keeps digging them up before they sink.</em>
+                    </p>
+                </div>
+
+                <p>
+                    But if you revisit the material <em>just</em> as you are starting to forget it, this act of
+                    retrieval strengthens your memory and halts the decay.
+                </p>
+            </div>
+
+            <div class="image-side">
+                <div class="evidence-box fade-in">
+                    <h3>🔬 Research Spotlight</h3>
+                    <p>
+                        <strong><a href="#references"
+                                style="color:var(--accent-color); text-decoration:none;">Martinengo et al.
+                                (2024)</a>:</strong> A meta-analysis in JMIR found that spaced digital
+                        learning improved knowledge retention, clinical performance, and procedural skills more than
+                        massed learning.
+                    </p>
+                    <hr style="border: 0; border-top: 1px solid #ddd; margin: 10px 0;">
+                    <p>
+                        <strong><a href="#references" style="color:var(--accent-color); text-decoration:none;">Durrani
+                                et al. (2024)</a>:</strong> Medical students using spaced flashcards significantly
+                        outperformed their peers after only four weeks.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tool-shoutout" style="margin-top: 20px;">
+            <h3>🛠️ Putting it into Practice</h3>
+            <p>
+                This is especially helpful with flashcard apps such as <strong>Anki</strong> that utilize an algorithm
+                to perfectly space your reviews.
+                Instead of fighting the forgetting curve, spaced repetition works <em>with</em> it, turning forgetting
+                into a tool for deeper learning.
+            </p>
+            <div class="simulation-box">
+                <h4>📉 The Forgetting Curve</h4>
+                <canvas id="forgettingCurveCanvas" width="400" height="250"></canvas>
+
+                <div class="controls-area">
+                    <label for="decaySlider"><strong>Decay Rate:</strong></label>
+                    <input type="range" id="decaySlider" min="0" max="100" value="50">
+                </div>
+
+                <p id="curveCaption" class="caption-text">
+                    Higher decay = Faster forgetting 📉
+                </p>
+            </div>
+
+            <div class="simulation-box" style="margin-top: 30px;">
+                <h4>🍯 The Sweet Spot</h4>
+                <p style="font-size: 0.9em; margin-bottom: 10px;">
+                    What if you review <em>only</em> when you hit the "Sweet Spot"? See how the gaps naturally widen!
+                </p>
+
+                <canvas id="sweetSpotCanvas" width="400" height="250"></canvas>
+
+                <div class="controls-area">
+                    <label for="sweetSpotSlider"><strong>Sweet Spot:</strong></label>
+                    <input type="range" id="sweetSpotSlider" class="slider-yellow" min="50" max="95" value="80">
+                </div>
+
+                <div class="badge-container"
+                    style="display:flex; justify-content:center; gap:10px; align-items:center; margin-bottom:10px;">
+                    <label><strong>Timing:</strong></label>
+                    <span
+                        style="background:#dbeafe; color:#2563eb; padding:2px 8px; border-radius:12px; font-size:0.8em; font-weight:bold;">
+                        ✅ Auto-optimize!
+                    </span>
+                </div>
+
+                <div class="controls-area">
+                    <label for="initialDecaySlider"><strong>Difficulty:</strong></label>
+                    <input type="range" id="initialDecaySlider" min="10" max="100" value="50">
+                </div>
+
+                <p id="sweetSpotCaption" class="caption-text">
+                    Reviewing at 80% recall -> Stronger Memory! 🚀
+                </p>
+            </div>
+        </div>
+
+    </section>
+    <!-- END OF SECTION B -->
+
+    <section class="section-container" id="feedback-loops">
+        <p class="transition-text fade-in" style="margin-bottom: 20px; font-style: italic; color: #666;">
+            Timing is crucial, but it's not the only factor. The <em>quality</em> of your questions matters just as
+            much.
+        </p>
+        <h2>🔄 <strong>Feedback</strong> and High-Quality Questions Matter</h2>
+        <div style="text-align: left; max-width: 700px; margin-bottom: 20px;">
+            <p>
+                Retrieval is only powerful if the questions make you actually think! Low-level questions like "Define X"
+                don't promote deep learning.
+                High-quality questions like "How does X cause Y?" or "What happens if...?" build flexible understanding.
+            </p>
+        </div>
+
+        <div class="evidence-box">
+            <h3>🔬 Research Spotlight</h3>
+            <p>
+                In a JMIR meta-analysis, it was found that <strong>immediate explanatory feedback</strong> dramatically
+                increased the effect of spaced learning.
+                Without feedback, retrieval becomes guessing instead of real learning.
+            </p>
+        </div>
+
+        <div class="quote-box">
+            <p>
+                "Students benefit most when cards force them to explain concepts, not memorize definitions... Feedback
+                transforms flashcards from memorization tools into understanding tools."
+                <br>
+                <strong>— Ali Abdaal, Productivity Educator</strong>
+            </p>
+        </div>
+
+        <div class="key-takeaway">
+            <h4>📝 How to make better cards:</h4>
+            <ul>
+                <li><strong>Ask Why/How:</strong> Connect concepts instead of isolating them.</li>
+                <li><strong>Mini Explanations:</strong> Add short context to your answers (not just one word).</li>
+                <li><strong>Binary Feedback:</strong> You either know it or you don't. No "sort of".</li>
+            </ul>
+        </div>
+
+        <div class="card-doctor-container">
+            <h3>🚑 The Card Doctor</h3>
+            <p>Why most people fail: <strong>Bad Cards.</strong></p>
+
+            <div class="card-comparison">
+                <!-- Bad Card (Passive) -->
+                <div id="bad-card-demo" class="bad-card">
+                    <h4>Q: Mitochondria Function</h4>
+                    <p style="color:#555;">A: Powerhouse of the cell, found in cytoplasm, double membrane... (too much
+                        info)</p>
+                </div>
+
+                <!-- Good Cards (Active) -->
+                <div id="good-cards-demo" class="good-cards-container hidden">
+                    <div class="good-card">
+                        <h4>Q: Function of Mitochondria?</h4>
+                        <p>A: Generates most of the cell's supply of ATP (energy).</p>
+                    </div>
+                    <div class="good-card">
+                        <h4>Q: What cells lack them?</h4>
+                        <p>A: Mature red blood cells.</p>
+                    </div>
+                </div>
+            </div>
+
+            <button id="fix-card-btn" class="fix-btn" onclick="fixCard()">
+                Fix This Card 🪄
+            </button>
+
+            <p id="fix-feedback" class="caption-text hidden">
+                Much better! <strong>Atomic cards</strong> = Binary feedback (Right/Wrong).
+            </p>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: WIDE DEMOS -->
+    <section class="section-container wide-section" id="action-demos">
+        <p class="transition-text fade-in"
+            style="margin-bottom: 40px; text-align: center; font-style: italic; color: #666;">
+            We've covered the science. Now, let's look at the tools that automate this entire process for you.
+        </p>
+        <div style="margin-bottom: 40px; text-align: center;">
+            <h2>See It in Action</h2>
+        </div>
+
+        <div class="demos-wrapper">
+
+            <!-- ROW 1: ANKI DEMO + EXPLANATION -->
+            <div class="demo-feature-row">
+                <!-- ANKI SIMULATOR -->
+                <div class="anki-demo-container">
+                    <h4 style="margin-bottom: 20px;">A Normal Anki Review</h4>
+                    <div class="anki-card-frame">
+                        <div class="anki-top-bar">
+                            <span id="anki-counter"><span style="color:#5dade2">10</span> <span
+                                    style="color:#e74c3c">5</span>
+                                <span style="color:#2ecc71">0</span></span>
+                        </div>
+                        <div class="anki-q-area">
+                            <h3 id="anki-q" style="color:var(--text-color)">What is the capital of Brazil?</h3>
+                            <div id="anki-flag" class="anki-flag">🇧🇷</div> <!-- Emulator Flag -->
+                        </div>
+
+                        <div id="anki-answer-area" class="hidden">
+                            <hr class="anki-divider">
+                            <h3 id="anki-a" style="color:var(--text-color)">Brasília</h3>
+                        </div>
+
+                        <div class="anki-footer-area">
+                            <button id="anki-show-btn" class="anki-action-btn" onclick="showAnkiAnswer()">Show
+                                Answer</button>
+
+                            <div id="anki-rate-btns" class="anki-grid-btns hidden">
+                                <div class="anki-btn-group">
+                                    <span class="anki-time">&lt;1m</span>
+                                    <button class="anki-rate-btn btn-again"
+                                        onclick="rateAnkiCard('again')">Again</button>
+                                </div>
+                                <div class="anki-btn-group">
+                                    <span class="anki-time">&lt;6m</span>
+                                    <button class="anki-rate-btn btn-hard" onclick="rateAnkiCard('hard')">Hard</button>
+                                </div>
+                                <div class="anki-btn-group">
+                                    <span class="anki-time">10m</span>
+                                    <button class="anki-rate-btn btn-good" onclick="rateAnkiCard('good')">Good</button>
+                                </div>
+                                <div class="anki-btn-group">
+                                    <span class="anki-time">4d</span>
+                                    <button class="anki-rate-btn btn-easy" onclick="rateAnkiCard('easy')">Easy</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EXPLANATION TEXT RIGHT -->
+                <div class="demo-text">
+                    <h3>How It Works</h3>
+                    <p>
+                        This isn't just a flashcard; it's a <strong>scheduling engine</strong>.
+                    </p>
+                    <ul style="padding-left: 20px; line-height: 1.6;">
+                        <li><strong>Active Recall:</strong> You must retrieve the answer <em>before</em> flipping. No
+                            cheating!</li>
+                        <li><strong>Honest Rating:</strong> You tell the algorithm how hard it was (Again, Hard, Good,
+                            Easy).</li>
+                        <li><strong>Smart Scheduling:</strong>
+                            <br>🔴 <strong>Again:</strong> See it in < 1 min (Relearning). <br>🟢 <strong>Good:</strong>
+                                See it in 10 mins (Graduating).
+                                <br>🔵 <strong>Easy:</strong> See it in 4 days (Review).
+                        </li>
+                    </ul>
+                    <p><em>The result? You only study what you're about to forget.</em></p>
+                </div>
+            </div>
+
+            <!-- ROW 2: ANKIMON DEMO + EXPLANATION -->
+            <div class="demo-feature-row">
+                <!-- ANKIMON SIMULATOR -->
+                <div class="ankimon-battle-container">
+                    <h4 style="margin-bottom: 20px; text-align:center; color:white;">Ankimon Battles While You Study
+                    </h4>
+                    <div class="battle-scene">
+                        <div class="battle-hud enemy-hud">
+                            <div style="font-weight:bold;">Dratini <span style="font-size:0.8em; color:#ccc;">Lvl
+                                    12</span></div>
+                            <div class="hp-bar-wrap">
+                                <div class="hp-fill" id="enemy-hp" style="width:100%"></div>
+                            </div>
+                        </div>
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/147.png"
+                            class="sprite enemy-sprite pixel-art" id="enemy-sprite">
+                        <div class="battle-hud player-hud">
+                            <div style="font-weight:bold;">Squirtle <span style="font-size:0.8em; color:#ccc;">Lvl
+                                    15</span></div>
+                            <div class="hp-bar-wrap">
+                                <div class="hp-fill" id="player-hp" style="width:100%"></div>
+                            </div>
+                            <div class="xp-bar-wrap-mini">
+                                <div class="xp-fill-blue" id="player-xp-mini" style="width:40%"></div>
+                            </div>
+                        </div>
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/7.png"
+                            class="sprite player-sprite pixel-art" id="player-sprite">
+                    </div>
+                    <div class="battle-dialogue" id="battle-text">
+                        Wild Dratini appeared!
+                    </div>
+                    <div class="ankimon-review-area">
+                        <div id="battle-q">
+                            <h4 style="margin:0 0 10px 0;">Biology: Cell Structure</h4>
+                            <p style="font-size:1.1em; margin-bottom:15px;">Powerhouse of the cell?</p>
+                            <button id="battle-show-btn" class="anki-action-btn" onclick="battleShowAnswer()">Show
+                                Answer</button>
+                        </div>
+                        <div id="battle-a" class="hidden">
+                            <h4 style="color:var(--accent-color); margin:0 0 10px 0;">Mitochondria</h4>
+                            <div class="battle-actions-grid">
+                                <button class="battle-btn btn-again" onclick="battleMove('Again')">Again</button>
+                                <button class="battle-btn btn-hard" onclick="battleMove('Hard')">Hard</button>
+                                <button class="battle-btn btn-good" onclick="battleMove('Good')">Good</button>
+                                <button class="battle-btn btn-easy" onclick="battleMove('Easy')">Easy</button>
+                            </div>
+                        </div>
+                        <div id="battle-win" class="hidden">
+                            <h3 style="color:#2ecc71; margin-top:0;">Enemy Fainted!</h3>
+                            <div style="display:flex; gap:10px; margin-top:10px;">
+                                <button class="catch-btn" style="background:#ff5252;" onclick="battleCatch()">🔴
+                                    Catch</button>
+                                <button class="catch-btn" style="background:#3498db;" onclick="battleNext()">⚔️ Defeat
+                                    (+XP)</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EXPLANATION TEXT RIGHT -->
+                <div class="demo-text">
+                    <h3>Gamify Your Learning</h3>
+                    <p>
+                        Let's be honest: studying can be boring. 😴
+                        <br>
+                        <strong>Gamification</strong> solves this by adding immediate rewards to the long-term process.
+                    </p>
+                    <ul style="padding-left: 20px; line-height: 1.6;">
+                        <li><strong>Turn-Based Combat:</strong> Your flashcards become ammo. Answer correctly to attack!
+                        </li>
+                        <li><strong>Visual Progress:</strong> Seeing XP bars fill up releases dopamine, making you
+                            <em>want</em> to
+                            do one more card.
+                        </li>
+                        <li><strong>Add-ons:</strong> This is real! Tools like <em>Pokemanki</em> or <em>Ankimon</em>
+                            plug directly into Anki.</li>
+                    </ul>
+                    <p><em>Turn the "grind" into a game.</em> 🎮</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- SECTION D: MOTIVATION -->
+    <section class="section-container" id="motivation">
+        <h2>🔥 <strong>Motivation</strong> and Friction</h2>
+
+        <div style="text-align: left; max-width: 700px; margin-bottom: 20px;">
+            <p>
+                Finally, knowing that retrieval works doesn’t automatically mean students use it. The real challenge
+                is motivation and sustainability.
+                How can one stick with using this study method to maximize efficiency?
+            </p>
+            <div class="bio-box"
+                style="border-left: 4px solid #F59E0B; background: rgba(245, 158, 11, 0.05); padding: 15px; border-radius: 8px; margin: 20px 0;">
+                <p style="margin:0;">
+                    <strong>Productivity Expert Thomas Frank</strong> (2.9M+ subscribers) argues that relying on
+                    willpower is a trap.
+                    Instead, he focuses on <strong>"Activation Energy"</strong>—the effort required to
+                    <em>start</em> a task.
+                </p>
+                <p style="margin-top:10px; font-size:0.95em;">
+                    If your flashcards are buried in a backpack, the "energy cost" to start matches climbing a hill.
+                    If they are on your phone's home screen, the cost is a single tap.
+                    <em>You don't need more motivation; you need less friction.</em>
+                </p>
+            </div>
+        </div>
+
+        <!-- FRICTION AUDIT (NOTEBOOK STYLE) -->
+        <div class="friction-calc-box">
+            <h4 style="margin-top:0; font-size:1.5em; margin-bottom:10px;">📊
+                The Friction Audit</h4>
+            <p style="font-size:0.9em; margin-bottom:15px; color:#555;">Check
+                all the obstacles currently in your way:</p>
+
+            <div class="friction-list">
+                <label class="friction-item">
+                    <span>📱 Phone is within arm's reach</span>
+                    <input type="checkbox" onchange="calculateFriction()" value="30">
+                </label>
+                <label class="friction-item">
+                    <span>💻 20+ unrelated browser tabs open</span>
+                    <input type="checkbox" onchange="calculateFriction()" value="20">
+                </label>
+                <label class="friction-item">
+                    <span>🎒 Materials are still in the bag</span>
+                    <input type="checkbox" onchange="calculateFriction()" value="25">
+                </label>
+                <label class="friction-item">
+                    <span>🤔 Not sure what exactly to study</span>
+                    <input type="checkbox" onchange="calculateFriction()" value="25">
+                </label>
+            </div>
+
+            <div class="friction-meter-container">
+                <div id="frictionBar" class="friction-meter-fill" style="width: 0%; background: #2ecc71;"></div>
+            </div>
+            <p id="frictionResult" class="result-text" style="color:#2ecc71;">Activation Energy: Low ⚡ Ready to
+                start!</p>
+        </div>
+
+        <script>
+            function calculateFriction() {
+                const checks = document.querySelectorAll('.friction-item input:checked');
+                let score = 0;
+                checks.forEach(c => score += parseInt(c.value));
+
+                const bar = document.getElementById('frictionBar');
+                const text = document.getElementById('frictionResult');
+
+                // Cap score at 100 for width
+                const width = Math.min(score, 100);
+                bar.style.width = width + '%';
+
+                if (score < 30) {
+                    bar.style.background = '#2ecc71'; // Green
+                    text.innerText = "Activation Energy: Low ⚡ (You'll start automatically)";
+                    text.style.color = '#2ecc71';
+                } else if (score < 60) {
+                    bar.style.background = '#f1c40f'; // Yellow
+                    text.innerText = "Activation Energy: Medium 🚧 (Requires willpower)";
+                    text.style.color = '#f39c12';
+                } else {
+                    bar.style.background = '#e74c3c'; // Red
+                    text.innerText = "Activation Energy: High 🛑 (Likely to procrastinate)";
+                    text.style.color = '#e74c3c';
+                }
+            }
+        </script>
+
+        <div class="evidence-box">
+            <h3>🔬 Science of Gamification</h3>
+            <p>
+                <strong>Xu et al. (2021):</strong> Gamification shifts students from relying on
+                extrinsic rewards to
+                building internal motivation.
+                Features such as badges and streaks help build a sense of competence
+                (`Self-Determination Theory`).
+            </p>
+            <p>
+                <em>Tip:</em> Try add-ons like <strong>Ankimon</strong> (Pokemon-style companion) to
+                make reviews
+                addictive! 👾
+            </p>
+        </div>
+
+    </section>
+
+    <!-- SECTION: TOOLKIT (MOVED) -->
+    <section class="section-container" id="toolkit-section">
+        <h2>🧰 Your Active Learning Toolkit</h2>
+        <p style="max-width:600px; margin-bottom:30px;">
+            Ready to stop rereading and start remembering? Here is everything you need to get started today.
+        </p>
+
+        <div class="comparison-container" style="gap:20px; flex-wrap:wrap;">
+            <!-- CARD 1: ANKI -->
+            <div class="concept-box active" style="flex:1; min-width:250px;">
+                <h3>📱 Anki (Free)</h3>
+                <p>The gold standard. Infinite customization, powerful algorithm.</p>
+                <a href="https://apps.ankiweb.net/" target="_blank" class="quiz-btn"
+                    style="display:inline-block; text-decoration:none; margin-top:10px;">Download Anki</a>
+            </div>
+
+            <!-- CARD 2: QUIZLET -->
+            <div class="concept-box active" style="flex:1; min-width:250px;">
+                <h3>🃏 Quizlet</h3>
+                <p>User-friendly, great for getting started quickly.</p>
+                <a href="https://quizlet.com/" target="_blank" class="quiz-btn"
+                    style="display:inline-block; text-decoration:none; margin-top:10px;">Visit Quizlet</a>
+            </div>
+        </div>
+
+        <div class="quote-box" style="margin-top:40px; max-width:700px;">
+            <h3>📋 The 3 Golden Rules</h3>
+            <ul style="text-align:left; padding-left:20px;">
+                <li><strong>1. Be Honest:</strong> If you hesitated, hit "Hard" or "Again". Don't lie to the algorithm.
+                </li>
+                <li><strong>2. Trust the Process:</strong> Do your reviews every day, even if it's just 5 minutes.</li>
+                <li><strong>3. Keep it Simple:</strong> Don't spend hours customizing. Just study.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section-container" id="conclusion" style="max-width: 800px; padding: 20px 20px 10px 20px;">
+        <h2 style="font-family: 'Pacifico', cursive; font-size: 3em; margin-bottom: 20px; color: var(--text-color);">
+            In Conclusion...</h2>
+
+        <div style="text-align: left; font-size: 1.05em; line-height: 1.8; margin-bottom: 10px;">
+            <p>
+                Most students aren’t struggling because they’re “bad at studying”—they’re struggling because they
+                were
+                <em>never taught</em> how learning truly works. 🧠
+            </p>
+            <p>
+                The science is clear: <strong>rereading</strong> and <strong>highlighting</strong> feel productive,
+                but
+                they don’t create lasting understanding.
+                Real learning happens when you <strong>retrieve information</strong>, <strong>space your
+                    practice</strong>, <strong>ask better questions</strong>, and <strong>build routines</strong>
+                that
+                you can actually stick with. 🚀
+            </p>
+
+
+
+            <p>
+                That’s the power of using your brain the way it’s designed to learn.
+                When you combine <strong>retrieval practice</strong>, <strong>spaced repetition</strong>,
+                <strong>high-quality questions</strong>, and <strong>sustainable habits</strong>, studying becomes
+                less
+                about <em>grinding</em> and more about building <strong>long-term, durable knowledge</strong>.
+            </p>
+            <p>
+                If your current study routine isn’t working, it’s not a personal failure—it’s a <strong>solvable
+                    strategy problem</strong>.
+                Shift how you learn, and you’ll start to see results that stick. 🌟
+            </p>
+        </div>
+
+
+    </section>
+
+    <div style="text-align:center; padding: 10px 40px;">
+        <button class="quiz-btn" style="background:#4f46e5; color:white;"
+            onclick="alert('Link copied to clipboard! Share the knowledge! 🚀')">
+            📲 Share with a Friend
+        </button>
+    </div>
+
+    <!-- REFERENCES SECTION -->
+    <section class="references-section" id="references">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h3>📚 References & Further Reading</h3>
+            <ul class="references-list">
+                <li><strong>Karpicke, J. D., & Blunt, J. R.</strong> (2011). Retrieval practice produces more
+                    learning
+                    than elaborate studying with concept mapping. <em>Science</em>, 331(6018), 772-775.</li>
+                <li><strong>Xu, J., et al.</strong> (2024). The impact of active recall and spaced repetition on
+                    student
+                    performance. <em>Journal of Affective Disorders</em>.</li>
+                <li><strong>Martinengo, L., et al.</strong> (2024). Spaced digital learning for health
+                    professionals: A
+                    meta-analysis. <em>Journal of Medical Internet Research</em>.</li>
+                <li><strong>Durrani, N., et al.</strong> (2024). Effect of spaced repetition on retention of medical
+                    knowledge. <em>BMC Medical Education</em>.</li>
+                <li><strong>Gilbert, S., et al.</strong> (2023). Best practices in learning science for medical
+                    education. <em>Medical Science Educator</em>.</li>
+                <li><strong>Frank, T.</strong> (2021). "The Most Powerful Way to Remember What You Study".
+                    <em>Thomas
+                        Frank / College Info Geek</em>.
+                </li>
+                <li><strong>Abdaal, A.</strong> (2022). "Why Active Recall Works". <em>Ali Abdaal Blog</em>.</li>
+            </ul>
+        </div>
+    </section>
+
+    <div style="text-align:center; padding-bottom: 40px; margin-top: 20px;">
+        <button class="quiz-btn" style="background: #ff6b6b; color: white; padding: 15px 30px;"
+            onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+            Scroll to Top <span class="bounce-arrow">⬆️</span>
+        </button>
+    </div>
+
+    <script>
+        // ==========================================
+        // 1. GLOBAL SETTINGS & OBSERVERS
+        // ==========================================
+
+        // --- Scroll Animation Observer ---
+        const observerOptions = { threshold: 0.3 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, observerOptions);
+
+        // ==========================================
+        // 2. APP LOGIC (Functions)
+        // ==========================================
+
+        // --- A. Graph Drawing Logic (Section B) ---
+        function initGraph() {
+            const canvas = document.getElementById('forgettingCurveCanvas');
+            const slider = document.getElementById('decaySlider');
+            const caption = document.getElementById('curveCaption');
+
+            if (!canvas || !slider) return; // Guard clause
+
+            const ctx = canvas.getContext('2d');
+
+            function drawCurve() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                const val = parseInt(slider.value);
+                const decay = 0.005 + (val / 1000);
+
+                ctx.beginPath();
+                ctx.lineWidth = 5;
+                ctx.strokeStyle = '#ff6b6b';
+                ctx.lineCap = 'round';
+
+                for (let x = 0; x < canvas.width; x++) {
+                    const y = canvas.height * Math.exp(-decay * x);
+                    ctx.lineTo(x, canvas.height - y); // Invert Y
+                }
+                ctx.stroke();
+
+                if (caption) {
+                    if (val < 30) caption.innerText = "Low Decay: Stays in memory! 🧠";
+                    else if (val > 70) caption.innerText = "High Decay: Forgotten fast! 📉";
+                    else caption.innerText = "Normal Decay: Needs spaced repetition. 🛠️";
+                }
+            }
+
+
+            slider.oninput = drawCurve;
+            drawCurve(); // Initial draw
+        }
+
+        // --- B. Sweet Spot Simulation (Section B - Second Graph) ---
+        function initSweetSpotGraph() {
+            const canvas = document.getElementById('sweetSpotCanvas');
+            const spotSlider = document.getElementById('sweetSpotSlider'); // Target %
+            const decaySlider = document.getElementById('initialDecaySlider'); // Initial Difficulty
+            const caption = document.getElementById('sweetSpotCaption');
+
+            if (!canvas || !spotSlider || !decaySlider) return;
+
+            const ctx = canvas.getContext('2d');
+
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                // Get User Values
+                const targetPercent = parseInt(spotSlider.value);
+                const initialDecay = 0.01 + (parseInt(decaySlider.value) / 1000);
+
+                const w = canvas.width;
+                const h = canvas.height - 40; // Reserve bottom 40px for Timeline
+                const timelineY = canvas.height - 30;
+
+                // Visualization Params
+                let memory = 1.0;
+                let currentDecay = initialDecay;
+                let lastRecallX = 0;
+                let ghostCurves = [];
+                let recallPoints = []; // Store where we recalled for drawing dots/bars
+
+                // 1. Draw "Sweet Spot" Zone
+                const zoneY = h * (1 - (targetPercent / 100));
+                const zoneHeight = h - zoneY;
+                const gradient = ctx.createLinearGradient(0, zoneY, 0, h);
+                gradient.addColorStop(0, "rgba(255, 215, 0, 0.3)");
+                gradient.addColorStop(1, "rgba(255, 215, 0, 0.0)");
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, zoneY, w, zoneHeight);
+
+                // Threshold Line
+                ctx.beginPath();
+                ctx.strokeStyle = "#f1c40f";
+                ctx.setLineDash([5, 5]);
+                ctx.moveTo(0, zoneY);
+                ctx.lineTo(w, zoneY);
+                ctx.stroke();
+                ctx.setLineDash([]);
+
+                // 2. Main Simulation Loop
+                let points = [];
+
+                for (let x = 0; x <= w; x++) {
+                    let t = x - lastRecallX;
+                    memory = Math.exp(-currentDecay * t);
+                    let y = h - (h * memory);
+
+                    points.push({ x, y });
+
+                    // CHECK FOR RECALL
+                    let memoryPercent = memory * 100;
+                    if (memoryPercent <= targetPercent) {
+                        // === RECALL EVENT ===
+
+                        // Store ghost curve start
+                        ghostCurves.push({
+                            startX: x,
+                            decay: currentDecay,
+                            startMemory: memory
+                        });
+
+                        // Store Recall Point (for visual dots)
+                        recallPoints.push({ x: x, y: y });
+
+                        // Draw Spike
+                        points.push({ x: x, y: 0 });
+
+                        // Reset
+                        lastRecallX = x;
+                        memory = 1.0;
+
+                        // Apply Spacing (Slower Decay)
+                        currentDecay *= 0.5; // Optimized for clearer visual
+                    }
+                }
+
+                // 3. Draw Main Curve
+                ctx.beginPath();
+                ctx.lineWidth = 4;
+                ctx.strokeStyle = '#c0392b';
+                ctx.lineCap = 'round';
+                ctx.lineJoin = 'round';
+
+                if (points.length > 0) ctx.moveTo(points[0].x, points[0].y);
+                for (let p of points) ctx.lineTo(p.x, p.y);
+                ctx.stroke();
+
+                // 4. Draw Ghost Curves
+                ctx.lineWidth = 1;
+                ctx.strokeStyle = '#ddd';
+
+                ghostCurves.forEach(ghost => {
+                    ctx.beginPath();
+                    for (let gx = ghost.startX; gx < w; gx++) {
+                        let t = gx - ghost.startX;
+                        let ghostMem = ghost.startMemory * Math.exp(-ghost.decay * t);
+                        let gy = h - (h * ghostMem);
+                        if (gx === ghost.startX) ctx.moveTo(gx, gy);
+                        else ctx.lineTo(gx, gy);
+                    }
+                    ctx.stroke();
+                });
+
+                // 5. Draw Visual Extras (Dots & Bars)
+
+                // Timeline Base
+                ctx.beginPath();
+                ctx.strokeStyle = "#eee";
+                ctx.lineWidth = 1;
+                ctx.moveTo(0, timelineY + 15);
+                ctx.lineTo(w, timelineY + 15);
+                ctx.stroke();
+
+                recallPoints.forEach(p => {
+                    // A. Yellow Dot at Curve
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, 6, 0, 2 * Math.PI);
+                    ctx.fillStyle = "#f1c40f";
+                    ctx.fill();
+                    ctx.strokeStyle = "white";
+                    ctx.stroke();
+
+                    // B. Pink Bar on Timeline
+                    ctx.fillStyle = "#ffafaf"; // Soft Pink
+                    ctx.fillRect(p.x - 4, timelineY, 8, 30); // Vertical pill
+                });
+
+                // Update Caption
+                if (caption) {
+                    caption.innerHTML = `Recall at <strong>${targetPercent}%</strong> = Gaps grow larger! 📏`;
+                }
+            }
+
+            spotSlider.oninput = draw;
+            decaySlider.oninput = draw;
+            draw();
+        }
+
+
+
+        // --- C. Checklist/Quiz Logic (Intro) ---
+        function checkStatus() {
+            const checkboxes = document.querySelectorAll('.checklist-items input[type="checkbox"]');
+            let isAnyChecked = Array.from(checkboxes).some(box => box.checked);
+
+            const btn = document.getElementById('diagnosis-btn');
+            if (btn) {
+                if (isAnyChecked) {
+                    btn.classList.add('visible-btn');
+                    btn.classList.remove('hidden-btn');
+                } else {
+                    btn.classList.remove('visible-btn');
+                    btn.classList.add('hidden-btn');
+                }
+            }
+        }
+
+        function revealSolution() {
+            const solution = document.getElementById('solution-reveal');
+            if (solution) {
+                solution.style.display = 'block';
+                solution.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // --- C. Card Doctor Logic (Section C) ---
+        function fixCard() {
+            const badCard = document.getElementById('bad-card-demo');
+            const goodCards = document.getElementById('good-cards-demo');
+            const btn = document.getElementById('fix-card-btn');
+            const feedback = document.getElementById('fix-feedback');
+
+            if (badCard && goodCards) {
+                // 1. Hide Bad Card
+                badCard.style.display = 'none';
+
+                // 2. Show Good Cards
+                goodCards.classList.remove('hidden');
+
+                if (btn) btn.style.display = 'none'; // Hide button after use
+                if (feedback) feedback.classList.remove('hidden');
+            }
+        }
+
+
+
+        // --- G. Anki Simulator Logic ---
+        const ankiDeck = [
+            { q: "What is the capital of Brazil?", a: "Brasília", f: "🇧🇷" },
+            { q: "What is the capital of France?", a: "Paris", f: "🇫🇷" },
+            { q: "What is the capital of Japan?", a: "Tokyo", f: "🇯🇵" },
+            { q: "What is the capital of Egypt?", a: "Cairo", f: "🇪🇬" },
+            { q: "What is the capital of Australia?", a: "Canberra", f: "🇦🇺" }
+        ];
+
+        // "Virtual" queues to simulate a full deck state
+        let ankiState = {
+            blue: 15, // New
+            red: 0,   // Learning
+            green: 5  // Review
+        };
+
+        let currentCardType = 'blue'; // Track what 'queue' the current card came from
+
+        function showAnkiAnswer() {
+            document.getElementById('anki-answer-area').classList.remove('hidden');
+            document.getElementById('anki-rate-btns').classList.remove('hidden');
+            document.getElementById('anki-rate-btns').style.display = 'flex'; // Ensure flex
+            document.getElementById('anki-show-btn').classList.add('hidden');
+        }
+
+        function rateAnkiCard(rating) {
+            // 1. Apply Anki Logic to State
+            if (currentCardType === 'blue') {
+                // NEW CARD
+                if (rating === 'again') {
+                    ankiState.blue--;
+                    ankiState.red++; // Failed new card -> Learning
+                } else {
+                    ankiState.blue--;
+                    ankiState.green++; // Graduated -> Review (Simulated for flow)
+                }
+            } else if (currentCardType === 'red') {
+                // LEARNING CARD
+                if (rating === 'again') {
+                    // Stays in red, no change
+                } else {
+                    ankiState.red--;
+                    ankiState.green++; // Graduated -> Review
+                }
+            } else {
+                // REVIEW CARD
+                if (rating === 'again') {
+                    ankiState.green--; // Removed from "Review Success" pile? Or stays? 
+                    // Actually Anki: Failed Review -> Relearning (Red)
+                    ankiState.green--; // No longer a "Review" for today
+                    ankiState.red++;
+                } else {
+                    ankiState.green--; // Done for the day
+                }
+            }
+
+            // prevent negatives (safety)
+            if (ankiState.blue < 0) ankiState.blue = 0;
+            if (ankiState.red < 0) ankiState.red = 0;
+            if (ankiState.green < 0) ankiState.green = 0;
+
+            // Check Empty
+            if (ankiState.blue === 0 && ankiState.red === 0 && ankiState.green === 0) {
+                // Reset Day
+                ankiState = { blue: 12, red: 0, green: 8 };
+                alert("All cards finished for today! ☀️\n(Resetting stats for demo...)");
+            }
+
+            nextAnkiCard();
+        }
+
+        function nextAnkiCard() {
+            // 1. Reset UI
+            document.getElementById('anki-answer-area').classList.add('hidden');
+            document.getElementById('anki-show-btn').classList.remove('hidden');
+            document.getElementById('anki-rate-btns').classList.add('hidden');
+
+            // 2. Determine Next Card Type (Priority: Red > Green > Blue)
+            if (ankiState.red > 0) currentCardType = 'red';
+            else if (ankiState.green > 0) currentCardType = 'green';
+            else currentCardType = 'blue';
+
+            // 3. Pick Random Content (Flavor)
+            const card = ankiDeck[Math.floor(Math.random() * ankiDeck.length)];
+            document.getElementById('anki-q').innerText = card.q;
+            document.getElementById('anki-a').innerText = card.a;
+            document.getElementById('anki-flag').innerText = card.f;
+
+            // 4. Update Header Numbers (Blue / Red / Green)
+            const counterHTML = `
+                <span style="color:#5dade2">${ankiState.blue}</span> 
+                <span style="color:#e74c3c">${ankiState.red}</span> 
+                <span style="color:#2ecc71">${ankiState.green}</span>
+            `;
+            document.getElementById('anki-counter').innerHTML = counterHTML;
+        }
+
+        // --- F. Dark Mode Logic ---
+        function toggleTheme() {
+            const body = document.body;
+            const btn = document.getElementById('themeToggle');
+
+            body.classList.toggle('dark-mode');
+
+            // Update Icon
+            if (body.classList.contains('dark-mode')) {
+                btn.innerHTML = "☀️";
+                // Optional: Force a redraw of canvas if needed, or just let it be. 
+                // The canvas uses clearRect so it might need a redraw to pick up new background if transparent.
+                // Our canvases are transparent, so they sit on top of bg-color. Should be fine.
+            } else {
+                btn.innerHTML = "🌙";
+            }
+        }
+
+
+
+        // --- H. Ankimon Battle Logic ---
+        let enemyHP = 100;
+        let playerXP = 40;
+
+        const battleDeck = [
+            { q: "Powerhouse of the cell?", a: "Mitochondria" },
+            { q: "Function of mitochondria?", a: "ATP production via cellular respiration." },
+            { q: "Osmosis vs diffusion?", a: "Diffusion: High → Low.<br>Osmosis: Water across membrane." },
+            { q: "DNA base pairs?", a: "A–T, C–G." },
+            { q: "Define homeostasis.", a: "Maintaining stable internal conditions." }
+        ];
+
+        // Copy deck for the session so we can remove used cards
+        let currentSessionDeck = [...battleDeck];
+
+        function battleShowAnswer() {
+            // document.getElementById('battle-q').classList.add('hidden'); // NO HIDING Q
+            document.getElementById('battle-show-btn').classList.add('hidden'); // Pick specific button ID
+            document.getElementById('battle-a').classList.remove('hidden');
+        }
+
+        function battleMove(rating) {
+            const dialogue = document.getElementById('battle-text');
+            const enemySprite = document.getElementById('enemy-sprite');
+
+            let damage = 0;
+            let moveName = "Tackle";
+
+            if (rating === 'Again') {
+                dialogue.innerText = "Squirtle missed! (Review Again)";
+                damage = 0;
+            } else if (rating === 'Hard') {
+                damage = 15;
+                moveName = "Bubble";
+                dialogue.innerText = `Squirtle used ${moveName}! It wasn't very effective...`;
+            } else if (rating === 'Good') {
+                damage = 40;
+                moveName = "Water Gun";
+                dialogue.innerText = `Squirtle used ${moveName}! It's super effective!`;
+            } else if (rating === 'Easy') {
+                damage = 100; // OHKO
+                moveName = "Hydro Pump";
+                dialogue.innerText = `Squirtle used ${moveName}! Critical Hit!`;
+            }
+
+            // Apply Damage
+            if (damage > 0) {
+                // Visuals
+                enemySprite.style.animation = "damageFlash 0.5s";
+                setTimeout(() => enemySprite.style.animation = "", 500);
+
+                enemyHP -= damage;
+                if (enemyHP < 0) enemyHP = 0;
+                document.getElementById('enemy-hp').style.width = enemyHP + "%";
+            }
+
+            // Check Win or Continue
+            if (enemyHP <= 0) {
+                setTimeout(() => {
+                    dialogue.innerText = "Wild Dratini fainted! What will you do?";
+                    document.getElementById('battle-a').classList.add('hidden');
+                    document.getElementById('battle-win').classList.remove('hidden');
+                    enemySprite.style.opacity = "0.5"; // Fainted look
+                }, 1000);
+            } else {
+                // Next Card (Loop)
+                setTimeout(() => {
+                    dialogue.innerText = "Next card loaded...";
+                    resetBattleCard();
+                }, 1500);
+            }
+        }
+
+        function resetBattleCard() {
+            document.getElementById('battle-q').classList.remove('hidden');
+            document.getElementById('battle-show-btn').classList.remove('hidden'); // Show button again
+            document.getElementById('battle-a').classList.add('hidden');
+
+            // Refill if empty
+            if (currentSessionDeck.length === 0) {
+                currentSessionDeck = [...battleDeck];
+                const dialogue = document.getElementById('battle-text');
+                dialogue.innerText = "Deck Shuffled! 🔀";
+            }
+
+            // Pick Random & Remove (Splice) to avoid repeats
+            const randomIndex = Math.floor(Math.random() * currentSessionDeck.length);
+            const card = currentSessionDeck[randomIndex];
+            currentSessionDeck.splice(randomIndex, 1); // Remove from session deck
+
+            document.querySelector('#battle-q p').innerHTML = card.q;
+            document.querySelector('#battle-a h4').innerHTML = card.a;
+        }
+
+        function battleCatch() {
+            const dialogue = document.getElementById('battle-text');
+            dialogue.innerText = "Caught Dratini! Added to collection. 🟢";
+            setTimeout(loadNewEnemy, 1500);
+        }
+
+        function battleNext() {
+            const dialogue = document.getElementById('battle-text');
+            playerXP += 20;
+            if (playerXP > 100) playerXP = 10;
+            document.getElementById('player-xp-mini').style.width = playerXP + "%";
+
+            dialogue.innerText = "Squirtle gained 200 XP!";
+            setTimeout(loadNewEnemy, 1500);
+        }
+
+        function loadNewEnemy() {
+            enemyHP = 100;
+            document.getElementById('enemy-hp').style.width = "100%";
+            document.getElementById('enemy-sprite').style.opacity = "1";
+            document.getElementById('battle-win').classList.add('hidden');
+            resetBattleCard();
+            document.getElementById('battle-text').innerText = "Wild Dratini appeared!";
+        }
+
+        // --- E. Intro Background Animation (Floating Cards) ---
+        function initIntroAnimation() {
+            const header = document.getElementById('introduction');
+            if (!header) return;
+
+            // Colors from our palette
+            const colors = ['#f1c40f', '#e74c3c', '#4ecdc4', '#333333'];
+            // Shapes or Cards
+            const cardCount = 50; // More squares!
+
+            for (let i = 0; i < cardCount; i++) {
+                const card = document.createElement('div');
+                card.classList.add('floating-card');
+
+                // Random Size
+                const size = Math.random() * 50 + 20; // 20px to 70px
+                card.style.width = `${size}px`;
+                card.style.height = `${size * 0.8}px`; // Rectangular
+
+                // Random Position
+                card.style.left = `${Math.random() * 100}%`;
+                // Start fixed at bottom to control height consistently
+                card.style.top = `100%`;
+
+                // Random Color
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                card.style.border = `3px solid ${color}`; // Thicker border
+                card.style.opacity = '0.1'; // Ultra faint
+
+                // Random Animation
+                const duration = Math.random() * 10 + 10; // 10-20s float
+                const delay = Math.random() * 5;
+                card.style.animation = `floatUp ${duration}s linear infinite ${delay}s`;
+
+                // Random Rotation
+                card.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+                header.appendChild(card);
+            }
+        }
+
+        // ==========================================
+        // 3. INITIALIZATION
+        // ==========================================
+        // Force scroll to top on reload
+        if (history.scrollRestoration) {
+            history.scrollRestoration = 'manual';
+        }
+
+        window.onload = function () {
+            console.log("App Loaded 🚀");
+
+            // 1. Attach Observers
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        // Also trigger fade-in children if any
+                        const children = entry.target.querySelectorAll('.fade-in');
+                        children.forEach(child => child.classList.add('visible'));
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.section-container').forEach(section => {
+                observer.observe(section);
+            });
+
+            // FORCE TRIGGER INTRODUCTION (Fix for missing title)
+            const intro = document.getElementById('introduction');
+            if (intro) {
+                intro.classList.add('visible');
+                intro.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+            }
+
+            // 2. Init Graphs & Sliders & Animation
+            initGraph();
+            initSweetSpotGraph();
+            initIntroAnimation();
+
+            // 3. Reset State (for reload freshness)
+            window.scrollTo(0, 0);
+
+            // Reset Checklist
+            const checkboxes = document.querySelectorAll('.checklist-items input[type="checkbox"]');
+            checkboxes.forEach(box => box.checked = false);
+
+            // Reset Card Doctor
+            const badCard = document.getElementById('bad-card-demo');
+            if (badCard) badCard.style.display = 'block';
+
+            const goodCards = document.getElementById('good-cards-demo');
+            if (goodCards) goodCards.classList.add('hidden');
+
+            const fixBtn = document.getElementById('fix-card-btn');
+            if (fixBtn) fixBtn.style.display = 'inline-block';
+
+            const fixFeedback = document.getElementById('fix-feedback');
+            if (fixFeedback) fixFeedback.classList.add('hidden');
+        };
+    </script>
+</body>
+
+</html>
