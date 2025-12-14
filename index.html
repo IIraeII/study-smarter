@@ -16,91 +16,117 @@
         🌙
     </button>
 
-    <header class="section-container active-section" id="introduction" style="min-height: auto; padding-bottom: 20px;">
+    <header class="active-section" id="introduction" style="min-height: auto;">
 
-        <h1 class="fade-in"> Passive Learning <span> Doesn't Stick </span> Active Recall Does </h1>
-        <p class="subtitle fade-in delay-1">How one simple change can 10x your learning speed.</p>
+        <!-- HERO BACKGROUND WRAPPER -->
+        <div class="header-hero-bg">
+            <div class="section-container" style="min-height:auto; padding:0; background:transparent;">
+                <h1 class="fade-in delay-1" style="font-size: 4.5em; line-height: 1.1;">
+                    <span class="headline-passive">Passive Learning Doesn't Stick...</span>
+                    <span class="headline-active">
+                        Active Recall Does
+                        <!-- Simple Brain Icon SVG -->
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            style="color:var(--text-color); transform: rotate(15deg) translateY(-5px); opacity:0.7;">
+                            <path
+                                d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-4A2.5 2.5 0 0 1 9.5 2Z" />
+                            <path
+                                d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-4A2.5 2.5 0 0 0 14.5 2Z" />
+                        </svg>
+                    </span>
+                </h1>
 
-        <p class="fade-in delay-2 author-tag">
-            by <strong>R.</strong> • 2025 • ⏱️ 8 min read
-        </p>
+                <p class="subtitle fade-in delay-2">How one simple change can 10x your learning speed.</p>
 
-        <div class="story-content fade-in delay-2"
-            style="text-align: left; margin: 20px auto; max-width: 600px; font-size: 1.05em; line-height: 1.8;">
-            <p>
-                If you’ve ever <strong>reread the same notes five times</strong> and still blanked on the exam, you’re
-                not alone.
-                <br>
-                Across higher education—especially in <strong>demanding science, health, and technical
-                    majors</strong>—students spend hours studying but still feel like nothing is sticking.
-            </p>
-            <p>
-                What most of us never learned is that <em>the way you study</em> matters more than <em>how long you
-                    study</em>.
-                Research has shown that the most effective learning strategies are the ones that students <strong>rarely
-                    use</strong>.
-            </p>
-            <p>
-                Popular methods like <strong>rereading, highlighting, and cramming</strong> aren’t effective for
-                long-term memory.
-                <br>
-                Based on research from cognitive psychology, here is the truth:
-            </p>
+                <p class="fade-in delay-3 author-tag" style="margin-top: 30px; font-size: 0.9em; opacity: 0.7;">
+                    by <strong>R.</strong> • 2025 • ⏱️ 8 min read
+                </p>
+            </div>
+        </div>
 
-            <div class="secret-container fade-in delay-2">
-                <div class="secret-box">
-                    <div class="secret-text-content">
-                        <h3 style="margin-top:0; color:#4f46e5;">💡 The Secret:</h3>
-                        <p>
-                            Retrieval practice and spaced repetition produce <strong>far more durable, transferable
-                                learning</strong>.
-                        </p>
+        <!-- STORY CONTENT (White Background) -->
+        <div class="section-container" style="min-height: auto; padding-top: 40px; padding-bottom: 20px;">
+            <div class="story-content fade-in delay-2"
+                style="text-align: left; margin: 20px auto; max-width: 600px; font-size: 1.05em; line-height: 1.8;">
+                <p>
+                    If you’ve ever <strong>reread the same notes five times</strong> and still blanked on the exam,
+                    you’re
+                    not alone.
+                    <br>
+                    Across higher education—especially in <strong>demanding science, health, and technical
+                        majors</strong>—students spend hours studying but still feel like nothing is sticking.
+                </p>
+                <p>
+                    What most of us never learned is that <em>the way you study</em> matters more than <em>how long you
+                        study</em>.
+                    Research has shown that the most effective learning strategies are the ones that students
+                    <strong>rarely
+                        use</strong>.
+                </p>
+                <p>
+                    Popular methods like <strong>rereading, highlighting, and cramming</strong> aren’t effective for
+                    long-term memory.
+                    <br>
+                    Based on research from cognitive psychology, here is the truth:
+                </p>
+
+                <div class="secret-container fade-in delay-2">
+                    <div class="secret-box">
+                        <div class="secret-text-content">
+                            <h3 style="margin-top:0; color:#4f46e5;">💡 The Secret:</h3>
+                            <p>
+                                Retrieval practice and spaced repetition produce <strong>far more durable, transferable
+                                    learning</strong>.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="checklist-container fade-in delay-3">
-                <h3 style="font-size:2em; margin-bottom:20px; color:#555; text-align:center;">
-                    ❓ Do any of these sound like you?
-                </h3>
-                <div class="checklist-items">
-                    <label class="custom-checkbox">
-                        <input type="checkbox" onchange="checkStatus()">
-                        <span class="checkmark"></span>
-                        I cram the night before exams 📚
-                    </label>
+        <div class="checklist-container fade-in delay-3">
+            <h3 style="font-size:2em; margin-bottom:20px; color:#555; text-align:center;">
+                ❓ Do any of these sound like you?
+            </h3>
+            <div class="checklist-items">
+                <label class="custom-checkbox">
+                    <input type="checkbox" onchange="checkStatus()">
+                    <span class="checkmark"></span>
+                    I cram the night before exams 📚
+                </label>
 
-                    <label class="custom-checkbox">
-                        <input type="checkbox" onchange="checkStatus()">
-                        <span class="checkmark"></span>
-                        I read the textbook but forget it instantly 🧠
-                    </label>
+                <label class="custom-checkbox">
+                    <input type="checkbox" onchange="checkStatus()">
+                    <span class="checkmark"></span>
+                    I read the textbook but forget it instantly 🧠
+                </label>
 
-                    <label class="custom-checkbox">
-                        <input type="checkbox" onchange="checkStatus()">
-                        <span class="checkmark"></span>
-                        I feel overwhelmed by how much there is to learn 📝
-                    </label>
-                </div>
-
-                <div style="text-align:center;">
-                    <button id="diagnosis-btn" class="diagnosis-btn hidden-btn" onclick="revealSolution()">
-                        See the Cure ➜
-                    </button>
-                </div>
+                <label class="custom-checkbox">
+                    <input type="checkbox" onchange="checkStatus()">
+                    <span class="checkmark"></span>
+                    I feel overwhelmed by how much there is to learn 📝
+                </label>
             </div>
 
-            <div id="solution-reveal" class="hidden-content">
-                <div class="highlight-box">
-                    <h3>The Answer: Spaced Repetition</h3>
-                    <p>It's not magic. It's the biology of how your brain actually works.</p>
+            <div style="text-align:center;">
+                <button id="diagnosis-btn" class="diagnosis-btn hidden-btn" onclick="revealSolution()">
+                    See the Cure ➜
+                </button>
+            </div>
+        </div>
 
-                    <div class="diagram-placeholder" style="border:none; background:transparent;">
-                        <img src="forgetting_curve_diagram.jpeg" alt="Forgetting Curve Diagram"
-                            style="width:100%; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1);">
-                    </div>
+        <div id="solution-reveal" class="hidden-content">
+            <div class="highlight-box">
+                <h3>The Answer: Spaced Repetition</h3>
+                <p>It's not magic. It's the biology of how your brain actually works.</p>
+
+                <div class="diagram-placeholder" style="border:none; background:transparent;">
+                    <img src="forgetting_curve_diagram.jpeg" alt="Forgetting Curve Diagram"
+                        style="width:100%; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1);">
                 </div>
             </div>
+        </div>
     </header>
     <section class="section-container" id="my-story" style="min-height: auto; padding-top: 20px; padding-bottom: 20px;">
 
@@ -123,7 +149,7 @@
                     This is when <em>everything changed</em>. ✨ Concepts that used to slip out of my mind suddenly
                     started sticking. 🧩
                     I remembered small details weeks later without having to cram, and my confidence going into exams
-                    was noticeably higher.
+                    was higher.
                     The difference wasn’t more effort—it was just <strong>better strategy</strong>.
                 </p>
             </div>
@@ -149,22 +175,12 @@
                 The message is clear: <strong>re-reading feels productive, but retrieving creates learning.</strong>
                 When you force yourself to recall, you can actually gauge whether you know the information or not.
             </p>
-        </div>
-
-        <div class="evidence-box">
-            <h3>🔬 Research Spotlight</h3>
             <p>
-                <strong>Science <a href="#references"
-                        style="color:var(--accent-color); text-decoration:none;"></a>(Karpicke & Blunt,
-                    2011)</a>:</strong> Retrieval practice led to significantly deeper
-                learning than concept mapping.
-                Students who tested themselves outperformed those who just read, even when they spent the same amount of
-                time!
-            </p>
-            <hr style="border: 0; border-top: 1px solid #ddd; margin: 10px 0;">
-            <p>
-                <strong>Xu et al. (2024):</strong> Self-testing and active recall strategies were linked to higher GPA,
-                better exam performance, and stronger self-confidence across college students.
+                Research confirms this. A study published in <strong>Science <a href="#references"
+                        style="color:var(--accent-color); text-decoration:none;">(Karpicke & Blunt, 2011)</a></strong>
+                showed that students who tested themselves significantly outperformed those who just read conceptual
+                maps, even when spending the same amount of time. Further research <strong>(Xu et al., 2024)</strong>
+                links these active recall strategies to higher GPAs and better exam performance.
             </p>
         </div>
 
@@ -202,97 +218,81 @@
 
         <h2>🚀 <strong>Spaced Repetition</strong> Is a Force Multiplier</h2>
 
-        <div class="content-split">
-            <div class="text-side">
-                <p>
-                    Retrieving information once isn’t enough. The real gains happen when you <strong>space out your
-                        review sessions</strong> over several days and weeks, rather than cramming them in one sitting.
-                </p>
-                <p>
-                    Spacing works because it takes advantage of the <strong>Ebbinghaus Forgetting Curve</strong>.
-                    After you learn something, your brain begins to forget it almost immediately.
-                    Without reinforcement, retention drops sharply within hours.
-                </p>
+        <!-- Replaced content-split with simple block flow since evidence box removed -->
+        <div style="text-align: left; margin: 0 auto;">
+            <p>
+                Retrieving information once isn’t enough. The real gains happen when you <strong>space out your
+                    review sessions</strong> over several days and weeks, rather than cramming them in one sitting.
+            </p>
+            <p>
+                Research supports this powerful effect. A meta-analysis in <strong>JMIR (Martinengo et al.,
+                    2024)</strong> found that spaced digital learning improved knowledge retention and clinical skills
+                more than massed learning. Similarly, <strong>Durrani et al. (2024)</strong> found that medical students
+                using spaced flashcards significantly outperformed their peers after only four weeks.
+            </p>
+            <p>
+                Spacing works because it takes advantage of the <strong>Ebbinghaus Forgetting Curve</strong>.
+                After you learn something, your brain begins to forget it almost immediately.
+                Without reinforcement, retention drops sharply within hours.
+            </p>
 
-                <!-- NEW EBBINGHAUS BIO SECTION -->
-                <div class="bio-box"
-                    style="background: rgba(0,0,0,0.03); padding: 25px; border-radius: 12px; margin: 30px 0; border-left: 4px solid var(--accent-color);">
-                    <div
-                        style="display:flex; gap:20px; align-items:center; justify-content:center; margin-bottom:20px;">
-                        <!-- Local Image Asset -->
-                        <img src="ebbinghaus.jpg" alt="Hermann Ebbinghaus"
-                            style="width:80px; height:80px; border-radius:50%; object-fit:cover; border:3px solid var(--bg-color); box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                        <div style="text-align: left;">
-                            <h4 style="margin:0 0 5px 0; font-size:1.2em;">Hermann Ebbinghaus</h4>
-                            <span style="font-size:0.9em; color:#666; font-style:italic;">The Psychologist Who Memorized
-                                "Nonsense" (1885)</span>
-                        </div>
+            <!-- NEW EBBINGHAUS BIO SECTION -->
+            <div class="bio-box"
+                style="background: rgba(0,0,0,0.03); padding: 25px; border-radius: 12px; margin: 30px 0; border-left: 4px solid var(--accent-color);">
+                <div style="display:flex; gap:20px; align-items:center; justify-content:center; margin-bottom:20px;">
+                    <!-- Local Image Asset -->
+                    <img src="ebbinghaus.jpg" alt="Hermann Ebbinghaus"
+                        style="width:80px; height:80px; border-radius:50%; object-fit:cover; border:3px solid var(--bg-color); box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <div style="text-align: left;">
+                        <h4 style="margin:0 0 5px 0; font-size:1.2em;">Hermann Ebbinghaus</h4>
+                        <span style="font-size:0.9em; color:#666; font-style:italic;">The Psychologist Who Memorized
+                            "Nonsense" (1885)</span>
                     </div>
+                </div>
 
-                    <p style="font-size:1em; margin-bottom:15px;">
-                        German psychologist Hermann Ebbinghaus wanted to understand <strong>pure memory</strong>.
-                        To remove variables like "meaning" or "association," he spent years memorizing thousands of
-                        <strong>nonsense syllables</strong> (like "WID", "ZOF", "KAF") and testing his recall.
-                    </p>
+                <p style="font-size:1em; margin-bottom:15px;">
+                    German psychologist Hermann Ebbinghaus wanted to understand <strong>pure memory</strong>.
+                    To remove variables like "meaning" or "association," he spent years memorizing thousands of
+                    <strong>nonsense syllables</strong> (like "WID", "ZOF", "KAF") and testing his recall.
+                </p>
 
-                    <div
-                        style="background:var(--bg-color); padding:15px; border-radius:8px; margin-bottom:15px; border:1px solid rgba(0,0,0,0.1);">
-                        <strong style="display:block; margin-bottom:10px; color:var(--accent-color);">📉 The
-                            "Forgetting" Stats:</strong>
-                        <ul style="margin:0; padding-left:20px; font-size:0.95em; margin-bottom:15px;">
-                            <li>After <strong>20 minutes</strong>, he forgot ~40% of the list.</li>
-                            <li>After <strong>1 day</strong>, he forgot ~66%.</li>
-                            <li>After <strong>6 days</strong>, he retained less than 25%.</li>
-                        </ul>
-                        <!-- Curve Diagram -->
-                        <img src="forgetting_curve.png" alt="Ebbinghaus Forgetting Curve Diagram"
-                            style="width:100%; height:auto; border-radius:6px; border:1px solid #eee;">
-                        <p style="font-size:0.8em; color:#666; text-align:center; margin-top:5px;">
-                            <em>Notice the steep drop? That's your brain deleting "useless" data.</em>
-                        </p>
-                    </div>
-
-                    <p style="font-size:1em;">
-                        <strong>Why does this happen?</strong> <br>
-                        Your brain is an efficiency machine. It views unused information as "spam" and clears the cache
-                        to save energy.
-                        If you don't retrieve it, your brain assumes it's not important for survival.
-                    </p>
-
-                    <p style="font-size:1em; margin-top:15px; border-top:1px dashed #ccc; padding-top:15px;">
-                        <strong>💡 The Silver Lining: "Savings"</strong><br>
-                        Ebbinghaus discovered that even when he "forgot" a list, relearning it took <em>significantly
-                            less time</em> than the first time.
-                        This <strong>"Savings Score"</strong> proves that the memory traces were never truly gone—just
-                        buried.
-                        <em>Spaced repetition keeps digging them up before they sink.</em>
+                <div
+                    style="background:var(--bg-color); padding:15px; border-radius:8px; margin-bottom:15px; border:1px solid rgba(0,0,0,0.1);">
+                    <strong style="display:block; margin-bottom:10px; color:var(--accent-color);">📉 The
+                        "Forgetting" Stats:</strong>
+                    <ul style="margin:0; padding-left:20px; font-size:0.95em; margin-bottom:15px;">
+                        <li>After <strong>20 minutes</strong>, he forgot ~40% of the list.</li>
+                        <li>After <strong>1 day</strong>, he forgot ~66%.</li>
+                        <li>After <strong>6 days</strong>, he retained less than 25%.</li>
+                    </ul>
+                    <!-- Curve Diagram -->
+                    <img src="forgetting_curve.png" alt="Ebbinghaus Forgetting Curve Diagram"
+                        style="width:100%; height:auto; border-radius:6px; border:1px solid #eee;">
+                    <p style="font-size:0.8em; color:#666; text-align:center; margin-top:5px;">
+                        <em>Notice the steep drop? That's your brain deleting "useless" data.</em>
                     </p>
                 </div>
 
-                <p>
-                    But if you revisit the material <em>just</em> as you are starting to forget it, this act of
-                    retrieval strengthens your memory and halts the decay.
+                <p style="font-size:1em;">
+                    <strong>Why does this happen?</strong> <br>
+                    Your brain is an efficiency machine. It views unused information as "spam" and clears the cache
+                    to save energy.
+                    If you don't retrieve it, your brain assumes it's not important for survival.
+                </p>
+
+                <p style="font-size:1em; margin-top:15px; border-top:1px dashed #ccc; padding-top:15px;">
+                    <strong>💡 The Silver Lining: "Savings"</strong><br>
+                    Ebbinghaus discovered something encouraging: even when you "forget" a list, relearning it takes a
+                    fraction of the original time. This <strong>"Savings Effect"</strong> proves the memory isn't
+                    gone—just buried. Spaced repetition works by digging these memories up right before they completely
+                    fade, strengthening them each time.
                 </p>
             </div>
 
-            <div class="image-side">
-                <div class="evidence-box fade-in">
-                    <h3>🔬 Research Spotlight</h3>
-                    <p>
-                        <strong><a href="#references"
-                                style="color:var(--accent-color); text-decoration:none;">Martinengo et al.
-                                (2024)</a>:</strong> A meta-analysis in JMIR found that spaced digital
-                        learning improved knowledge retention, clinical performance, and procedural skills more than
-                        massed learning.
-                    </p>
-                    <hr style="border: 0; border-top: 1px solid #ddd; margin: 10px 0;">
-                    <p>
-                        <strong><a href="#references" style="color:var(--accent-color); text-decoration:none;">Durrani
-                                et al. (2024)</a>:</strong> Medical students using spaced flashcards significantly
-                        outperformed their peers after only four weeks.
-                    </p>
-                </div>
-            </div>
+            <p>
+                But if you revisit the material <em>just</em> as you are starting to forget it, this act of
+                retrieval strengthens your memory and halts the decay.
+            </p>
         </div>
 
         <div class="tool-shoutout" style="margin-top: 20px;">
@@ -305,7 +305,21 @@
             </p>
             <div class="simulation-box">
                 <h4>📉 The Forgetting Curve</h4>
-                <canvas id="forgettingCurveCanvas" width="400" height="250"></canvas>
+                <div style="display:flex; align-items:center; justify-content:center;">
+                    <!-- Y-Axis Label -->
+                    <div
+                        style="writing-mode: vertical-rl; transform: rotate(180deg); font-size: 0.8em; color: #888; font-weight: bold; margin-right: 10px;">
+                        Retention %
+                    </div>
+                    <div>
+                        <canvas id="forgettingCurveCanvas" width="400" height="250"></canvas>
+                        <!-- X-Axis Label -->
+                        <div
+                            style="text-align: center; font-size: 0.8em; color: #888; font-weight: bold; margin-top: 0px;">
+                            Time →
+                        </div>
+                    </div>
+                </div>
 
                 <div class="controls-area">
                     <label for="decaySlider"><strong>Decay Rate:</strong></label>
@@ -323,7 +337,21 @@
                     What if you review <em>only</em> when you hit the "Sweet Spot"? See how the gaps naturally widen!
                 </p>
 
-                <canvas id="sweetSpotCanvas" width="400" height="250"></canvas>
+                <div style="display:flex; align-items:center; justify-content:center;">
+                    <!-- Y-Axis Label -->
+                    <div
+                        style="writing-mode: vertical-rl; transform: rotate(180deg); font-size: 0.8em; color: #888; font-weight: bold; margin-right: 10px;">
+                        Retention %
+                    </div>
+                    <div>
+                        <canvas id="sweetSpotCanvas" width="400" height="250"></canvas>
+                        <!-- X-Axis Label -->
+                        <div
+                            style="text-align: center; font-size: 0.8em; color: #888; font-weight: bold; margin-top: 0px;">
+                            Time (Repeated Review) →
+                        </div>
+                    </div>
+                </div>
 
                 <div class="controls-area">
                     <label for="sweetSpotSlider"><strong>Sweet Spot:</strong></label>
@@ -365,14 +393,10 @@
                 don't promote deep learning.
                 High-quality questions like "How does X cause Y?" or "What happens if...?" build flexible understanding.
             </p>
-        </div>
-
-        <div class="evidence-box">
-            <h3>🔬 Research Spotlight</h3>
             <p>
-                In a JMIR meta-analysis, it was found that <strong>immediate explanatory feedback</strong> dramatically
-                increased the effect of spaced learning.
-                Without feedback, retrieval becomes guessing instead of real learning.
+                In fact, a JMIR meta-analysis found that <strong>immediate explanatory feedback</strong> dramatically
+                increases the effect of spaced learning. Without feedback, you might just be practicing the wrong
+                answers.
             </p>
         </div>
 
@@ -425,8 +449,7 @@
 
             <p id="fix-feedback" class="caption-text hidden">
                 Much better! <strong>Atomic cards</strong> = Binary feedback (Right/Wrong).
-            </p>
-        </div>
+
     </section>
 
     <!-- NEW SECTION: WIDE DEMOS -->
@@ -585,7 +608,9 @@
                             <em>want</em> to
                             do one more card.
                         </li>
-                        <li><strong>Add-ons:</strong> This is real! Tools like <em>Pokemanki</em> or <em>Ankimon</em>
+                        <li><strong>Add-ons:</strong> This is real! Tools like <a
+                                href="https://ankiweb.net/shared/info/1908235722" target="_blank"
+                                style="color:var(--accent-color); text-decoration:none;"><em>Ankimon</em></a>
                             plug directly into Anki.</li>
                     </ul>
                     <p><em>Turn the "grind" into a game.</em> 🎮</p>
@@ -685,21 +710,16 @@
             }
         </script>
 
-        <div class="evidence-box">
-            <h3>🔬 Science of Gamification</h3>
-            <p>
-                <strong>Xu et al. (2021):</strong> Gamification shifts students from relying on
-                extrinsic rewards to
-                building internal motivation.
-                Features such as badges and streaks help build a sense of competence
-                (`Self-Determination Theory`).
-            </p>
-            <p>
-                <em>Tip:</em> Try add-ons like <strong>Ankimon</strong> (Pokemon-style companion) to
-                make reviews
-                addictive! 👾
-            </p>
-        </div>
+        <p>
+            Gamification helps shift this dynamic. <strong>Xu et al. (2021)</strong> found that features like badges
+            and streaks help students move from relying on external rewards to building internal motivation and a
+            sense of competence (`Self-Determination Theory`).
+        </p>
+        <p>
+            <em>Tip:</em> Try add-ons like <strong>Ankimon</strong> (Pokemon-style companion) to
+            make reviews
+            addictive! 👾
+        </p>
 
     </section>
 
@@ -728,15 +748,7 @@
             </div>
         </div>
 
-        <div class="quote-box" style="margin-top:40px; max-width:700px;">
-            <h3>📋 The 3 Golden Rules</h3>
-            <ul style="text-align:left; padding-left:20px;">
-                <li><strong>1. Be Honest:</strong> If you hesitated, hit "Hard" or "Again". Don't lie to the algorithm.
-                </li>
-                <li><strong>2. Trust the Process:</strong> Do your reviews every day, even if it's just 5 minutes.</li>
-                <li><strong>3. Keep it Simple:</strong> Don't spend hours customizing. Just study.</li>
-            </ul>
-        </div>
+
     </section>
 
     <section class="section-container" id="conclusion" style="max-width: 800px; padding: 20px 20px 10px 20px;">
@@ -779,7 +791,7 @@
     </section>
 
     <div style="text-align:center; padding: 10px 40px;">
-        <button class="quiz-btn" style="background:#4f46e5; color:white;"
+        <button class="quiz-btn" style="background:var(--secondary-accent); color:var(--bg-color); font-weight:bold;"
             onclick="alert('Link copied to clipboard! Share the knowledge! 🚀')">
             📲 Share with a Friend
         </button>
@@ -813,7 +825,8 @@
     </section>
 
     <div style="text-align:center; padding-bottom: 40px; margin-top: 20px;">
-        <button class="quiz-btn" style="background: #ff6b6b; color: white; padding: 15px 30px;"
+        <button class="quiz-btn"
+            style="background: var(--accent-color); color: var(--bg-color); padding: 15px 30px; font-weight:bold; border:none;"
             onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
             Scroll to Top <span class="bounce-arrow">⬆️</span>
         </button>
@@ -861,6 +874,12 @@
                     ctx.lineTo(x, canvas.height - y); // Invert Y
                 }
                 ctx.stroke();
+
+                // --- AXIS LABELS REMOVED (Moved to HTML) ---
+                // ctx.fillStyle = "#888";
+                // ctx.font = "12px sans-serif";
+                // ctx.fillText("Retention %", 10, 20);
+                // ctx.fillText("Time →", canvas.width - 50, canvas.height - 10);
 
                 if (caption) {
                     if (val < 30) caption.innerText = "Low Decay: Stays in memory! 🧠";
@@ -1013,6 +1032,12 @@
                 if (caption) {
                     caption.innerHTML = `Recall at <strong>${targetPercent}%</strong> = Gaps grow larger! 📏`;
                 }
+
+                // --- AXIS LABELS REMOVED (Moved to HTML) ---
+                // ctx.fillStyle = "#888";
+                // ctx.font = "12px sans-serif";
+                // ctx.fillText("Retention %", 10, 20);
+                // ctx.fillText("Time (Repeated Review) →", canvas.width - 160, canvas.height - 10);
             }
 
             spotSlider.oninput = draw;
@@ -1306,43 +1331,60 @@
 
         // --- E. Intro Background Animation (Floating Cards) ---
         function initIntroAnimation() {
-            const header = document.getElementById('introduction');
+            // Target ONLY the hero background container
+            const header = document.querySelector('.header-hero-bg');
             if (!header) return;
 
-            // Colors from our palette
-            const colors = ['#f1c40f', '#e74c3c', '#4ecdc4', '#333333'];
-            // Shapes or Cards
-            const cardCount = 50; // More squares!
+            // Updated Pastel Palette 
+            const colors = ['#FFB7B2', '#B5EAD7', '#E2F0CB', '#FFDAC1', '#E0BBE4'];
 
-            for (let i = 0; i < cardCount; i++) {
+            const numCards = 60; // Denser
+            const cards = []; // Store references for animation loop
+
+            for (let i = 0; i < numCards; i++) {
+                // 1. Create Wrapper (Handles Float Animation)
+                const wrapper = document.createElement('div');
+                wrapper.classList.add('card-wrapper');
+
+                // Random Size
+                const width = Math.random() * 40 + 40;
+                const height = width * 0.6;
+                wrapper.style.width = `${width}px`;
+                wrapper.style.height = `${height}px`;
+
+                // Random Position
+                const leftPos = Math.random() * 100;
+                const topPos = Math.random() * 100;
+                wrapper.style.left = `${leftPos}%`;
+                wrapper.style.top = `${topPos}%`;
+
+                // Wrapper Animation (Float Up)
+                const duration = Math.random() * 20 + 15;
+                const delay = Math.random() * 20;
+                wrapper.style.animation = `floatUp ${duration}s linear infinite -${delay}s`;
+
+                // 2. Create Inner Card (Visuals + Repulsion Transform)
                 const card = document.createElement('div');
                 card.classList.add('floating-card');
 
-                // Random Size
-                const size = Math.random() * 50 + 20; // 20px to 70px
-                card.style.width = `${size}px`;
-                card.style.height = `${size * 0.8}px`; // Rectangular
+                // Styling
+                const rawColor = colors[Math.floor(Math.random() * colors.length)];
+                card.style.backgroundColor = rawColor;
+                card.style.border = `1px solid rgba(0,0,0,0.05)`;
+                card.style.opacity = '0.25'; // TRANSPARENT as requested (was 0.6)
 
-                // Random Position
-                card.style.left = `${Math.random() * 100}%`;
-                // Start fixed at bottom to control height consistently
-                card.style.top = `100%`;
+                wrapper.appendChild(card);
+                header.appendChild(wrapper);
 
-                // Random Color
-                const color = colors[Math.floor(Math.random() * colors.length)];
-                card.style.border = `3px solid ${color}`; // Thicker border
-                card.style.opacity = '0.1'; // Ultra faint
-
-                // Random Animation
-                const duration = Math.random() * 10 + 10; // 10-20s float
-                const delay = Math.random() * 5;
-                card.style.animation = `floatUp ${duration}s linear infinite ${delay}s`;
-
-                // Random Rotation
-                card.style.transform = `rotate(${Math.random() * 360}deg)`;
-
-                header.appendChild(card);
+                // Store center point relative to viewport for simplified physics?
+                // Actually we will calculate relative to header container in the event loop.
+                // We store the 'card' element to apply transform to.
+                cards.push(card);
             }
+
+            // --- MOUSE REPULSION RETURNED TO SIMPLE FLOATING ---
+            // User requested to remove the interactive repulsion but keep the visuals.
+            // So we just let the CSS animations do their thing!
         }
 
         // ==========================================
