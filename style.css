@@ -917,6 +917,15 @@ body.dark-mode .references-section {
     line-height: 40px;
 }
 
+/* Dark Mode Notebook Paper */
+body.dark-mode .friction-calc-box {
+    background-color: var(--card-bg);
+    border-color: var(--surface2);
+    /* Invert lines: Transparent with light grey lines -> Transparent with dark grey lines */
+    background-image: linear-gradient(transparent 39px, rgba(255, 255, 255, 0.05) 1px);
+    color: var(--text-color);
+}
+
 /* Red Margin Line */
 .friction-calc-box::before {
     content: '';
@@ -1720,9 +1729,11 @@ body.dark-mode .anki-action-btn {
 }
 
 /* Dark mode for review area handled by standard .dark-mode rules if using shared classes */
+/* Dark mode for review area handled by standard .dark-mode rules if using shared classes */
 body.dark-mode .ankimon-review-area {
-    background: var(--card-bg);
-    color: var(--text-color);
+    background: var(--card-bg) !important;
+    color: var(--text-color) !important;
+    border-top: 1px solid var(--surface2);
 }
 
 .battle-actions-grid {
