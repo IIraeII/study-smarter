@@ -170,10 +170,11 @@ body {
     line-height: 1.6;
     margin: 0;
 
-    /* Scroll Snap Logic */
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
+    line-height: 1.6;
+    margin: 0;
+
+    /* Standard Scrolling */
+    overflow-x: hidden;
 }
 
 /* --- TYPOGRAPHY --- */
@@ -186,6 +187,7 @@ h1 {
 /* Highlight effect for H1 */
 h1 span {
     background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -211,14 +213,11 @@ blockquote {
 
 /* --- LAYOUT & SECTIONS --- */
 .section-container {
-    min-height: 100vh;
-    scroll-snap-align: start;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 20px;
+    padding: 60px 20px;
     max-width: 800px;
     margin: 0 auto;
     position: relative;
@@ -237,13 +236,25 @@ blockquote {
 }
 
 /* --- FLOATING ANIMATION --- */
-.floating-card {
+.card-wrapper {
     position: absolute;
-    background: rgba(255, 255, 255, 0.1);
-    /* Slight fill */
-    border-radius: 4px;
     pointer-events: none;
-    z-index: 1;
+    /* Let events pass through wrapper to container? Actually we need container to capture mousemove */
+    z-index: 10;
+}
+
+.floating-card {
+    /* Visual styles */
+    /* Width/Height set by JS */
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+
+    /* Repulsion Transform handled by JS */
+    transition: transform 0.1s ease-out;
+    /* Fast response for physics */
+    /* No absolute positioning here, relative to wrapper */
+    width: 100%;
+    height: 100%;
 }
 
 /* Ensure text sits on top */
@@ -252,7 +263,17 @@ blockquote {
 #introduction .story-content,
 #introduction .checklist-container {
     position: relative;
-    z-index: 10;
+    z-index: 200;
+    pointer-events: none;
+    /* Let mouse pass through text to affect cards underneath? Or maybe we just track mouse globally on header */
+}
+
+/* Re-enable pointer events for interactive elements inside header */
+#introduction .story-content,
+#introduction .checklist-container,
+#introduction a,
+#introduction button {
+    pointer-events: auto;
 }
 
 @keyframes floatUp {
@@ -262,20 +283,17 @@ blockquote {
     }
 
     10% {
-        opacity: 0.1;
-        /* Barely visible */
+        opacity: 1;
+        /* Fade in */
     }
 
-    80% {
-        opacity: 0.1;
-        /* Stay visible until near top of path */
+    90% {
+        opacity: 1;
     }
 
     100% {
-        transform: translateY(-85vh) rotate(360deg);
-        /* Stop near top (Title) */
+        transform: translateY(-120vh) rotate(360deg);
         opacity: 0;
-        /* Fade out */
     }
 }
 
@@ -349,6 +367,15 @@ blockquote {
     text-align: left;
     background-color: var(--card-bg);
     /* Fallback */
+
+    /* Symmetry Fix: Push buttons to bottom */
+    display: flex;
+    flex-direction: column;
+}
+
+.concept-box p {
+    flex-grow: 1;
+    /* Pushes content below it (the button) to the bottom */
 }
 
 .passive {
@@ -486,6 +513,10 @@ blockquote {
     border-radius: 15px;
     padding: 30px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    /* Layout Constraint */
+    max-width: 800px;
+    margin: 40px auto;
+    /* Centered with breathing room */
 }
 
 .diagram-placeholder {
@@ -505,14 +536,23 @@ blockquote {
 
 /* --- CHECKLIST STYLE QUIZ --- */
 .checklist-container {
-    background-color: transparent;
-    border: none;
-    padding: 20px 0;
-    margin: 20px 0;
+    background: #fff;
+    padding: 30px;
+    border-radius: 4px;
+    /* Clean, minimal look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin: 40px auto;
     text-align: left;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 600px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Dark Mode for Checklist - HIGH SPECIFICITY */
+body.dark-mode .checklist-container,
+body.dark-mode #introduction .checklist-container {
+    background-color: var(--card-bg) !important;
+    border-color: #444 !important;
 }
 
 .checklist-instruction {
@@ -685,6 +725,7 @@ blockquote {
 /* 3. Gradient Text for Big Numbers/Words */
 .gradient-text {
     background: linear-gradient(45deg, #FF512F, #DD2476);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 800;
@@ -698,6 +739,72 @@ blockquote {
     margin-top: -10px;
     margin-bottom: 30px;
     font-family: var(--main-font);
+}
+
+/* --- SPICY HEADER REDESIGN --- */
+#introduction {
+    padding: 0;
+    /* Reset padding, handled by inner containers */
+    border-bottom: none;
+    background: transparent;
+    max-width: none;
+    /* Ensure full width */
+    width: 100%;
+}
+
+.header-hero-bg {
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    /* Softer Neutral Gradient */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    /* Clip floating shapes */
+    z-index: 1;
+    /* Ensure distinct stacking context */
+}
+
+/* Dark Mode Gradient Override */
+body.dark-mode .header-hero-bg {
+    background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+    /* Darker Teal/Blue Gradient */
+}
+
+/* Typography Hierarchy */
+.headline-passive {
+    display: block;
+    font-size: 0.6em;
+    /* Relative to H1 */
+    font-weight: 400;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+
+.headline-active {
+    display: block;
+    font-size: 1.1em;
+    /* Boost size */
+    font-weight: 800;
+    color: var(--accent-color);
+    position: relative;
+    /* For decorative elements if needed */
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.05);
+}
+
+/* Decorative Swoosh (Optional CSS-only underline) */
+.headline-active::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--secondary-accent);
+    margin: 10px auto 0;
+    border-radius: 2px;
 }
 
 /* --- EVIDENCE BOX STYLE --- */
@@ -757,15 +864,16 @@ blockquote {
 
 /* --- REFERENCES BOX --- */
 .references-section {
-    background: #f8f9fa;
-    /* Light grey background */
-    border: 1px solid #ddd;
+    background: #fff;
+    padding: 40px;
     border-radius: 12px;
-    padding: 30px;
-    margin: 40px auto;
-    max-width: 800px;
-    text-align: left;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s;
+}
+
+/* Dark Mode for References */
+body.dark-mode .references-section {
+    background-color: var(--card-bg);
 }
 
 .references-list li {
