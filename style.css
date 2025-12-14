@@ -79,6 +79,15 @@ body.dark-mode {
     /* Surface1 */
     --sweet-label-bg: #45475a;
     /* Surface1 */
+
+    /* Extra Catppuccin Mocha Specifics */
+    --mantle: #181825;
+    --crust: #11111b;
+    --surface1: #45475a;
+    --surface2: #585b70;
+    --overlay0: #6c7086;
+    --overlay-bg: rgba(30, 30, 46, 0.85);
+    /* Base with opacity */
 }
 
 /* --- DARK MODE TOGGLE BTN --- */
@@ -770,8 +779,8 @@ body.dark-mode #introduction .checklist-container {
 
 /* Dark Mode Gradient Override */
 body.dark-mode .header-hero-bg {
-    background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
-    /* Darker Teal/Blue Gradient */
+    background: linear-gradient(135deg, var(--mantle) 0%, var(--science-blue) 100%);
+    /* Mocha: Mantle -> Blue */
 }
 
 /* Typography Hierarchy */
@@ -1407,8 +1416,8 @@ body.dark-mode .anki-action-btn {
 .ankimon-container {
     background: var(--card-bg);
     /* Match card theme */
-    border: 3px solid #333;
-    /* Retro game border */
+    border: 3px solid var(--surface2);
+    /* Catppuccin border */
     border-radius: 10px;
     max-width: 400px;
     margin: 30px auto;
@@ -1418,7 +1427,7 @@ body.dark-mode .anki-action-btn {
     /* For overlays */
     font-family: 'Courier New', monospace;
     /* Retro font */
-    box-shadow: 0 10px 0 #222;
+    box-shadow: 0 10px 0 var(--crust);
     /* Gameboy-ish depth */
 }
 
@@ -1426,8 +1435,8 @@ body.dark-mode .anki-action-btn {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #333;
-    color: white;
+    background: var(--surface1);
+    color: var(--text-color);
     padding: 8px;
     border-radius: 5px;
     margin-bottom: 15px;
@@ -1602,12 +1611,14 @@ body.dark-mode .anki-action-btn {
 
 .battle-hud {
     position: absolute;
-    background: rgba(0, 0, 0, 0.6);
+    background: var(--overlay-bg, rgba(0, 0, 0, 0.6));
+    /* Fallback for light mode */
     padding: 8px;
     border-radius: 8px;
     color: white;
+    /* Keep white for contrast on overlay */
     min-width: 140px;
-    border: 1px solid #555;
+    border: 1px solid var(--surface2);
     z-index: 5;
 }
 
